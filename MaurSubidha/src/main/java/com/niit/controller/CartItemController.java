@@ -81,7 +81,7 @@ public class CartItemController {
 
     }
 
-    @RequestMapping(value = "/{cartId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/{cartId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void clearCart(@PathVariable(value = "cartid") int cartid){
     	

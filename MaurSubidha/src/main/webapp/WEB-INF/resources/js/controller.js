@@ -22,13 +22,13 @@ cartApp.controller("cartCtrl", function($scope, $http){
     $scope.removeFromCart= function(cartItemId){
     	
         $http.post('http://localhost:9002/Project1/rest/cart/remove/' + cartItemId).success(function(data){
-        	console.log('cartitem to be removed is ' + cartItemId);
+        	alert('Product successfully removed to the cart!');
            $scope.refreshCart();
         });
     };
     
     $scope.clearCart= function(){
-        $http.post('http://localhost:9002/Project1/rest/cart/' + $scope.cartId).success($scope.refreshCart());
+        $http.put('http://localhost:9002/Project1/rest/cart/' + $scope.cartId).success($scope.refreshCart());
     };
     
     $scope.calGrandTotal= function(){
