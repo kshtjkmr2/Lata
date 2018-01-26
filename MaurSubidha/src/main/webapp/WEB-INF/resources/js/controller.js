@@ -20,8 +20,9 @@ cartApp.controller("cartCtrl", function($scope, $http){
     };
     
     $scope.removeFromCart= function(cartItemId){
-    	console.log('cartitem to be removed is ' + cartItemId);
+    	
         $http.post('http://localhost:9002/Project1/rest/cart/remove/' + cartItemId).success(function(data){
+        	console.log('cartitem to be removed is ' + cartItemId);
            $scope.refreshCart();
         });
     };
