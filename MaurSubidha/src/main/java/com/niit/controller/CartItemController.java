@@ -72,7 +72,7 @@ public class CartItemController {
         cartItemService.addCartItem(cartItem);
     }
     
-    @RequestMapping(value = "/remove/{cartItemId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/remove/{cartItemid}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void removeItem(@PathVariable(value = "cartItemid") int cartItemId){
     	System.out.println("Inside cartitemcontroller");
@@ -81,9 +81,9 @@ public class CartItemController {
 
     }
 
-    @RequestMapping(value = "/{cartId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{cartId}", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void clearCart(@PathVariable(value = "cartid") int cartid){
+    public void clearCart(@PathVariable(value = "cartId") int cartid){
     	
         Cart cart = cartService.getCartById(cartid);
         cartItemService.removeAllCartItems(cart);

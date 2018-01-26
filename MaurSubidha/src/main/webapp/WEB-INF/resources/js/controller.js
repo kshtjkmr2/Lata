@@ -19,16 +19,18 @@ cartApp.controller("cartCtrl", function($scope, $http){
         });
     };
     
-    $scope.removeFromCart= function(cartItemId){
-    	
-        $http.post('http://localhost:9002/Project1/rest/cart/remove/' + cartItemId).success(function(data){
-        	alert('Product successfully removed to the cart!');
+    $scope.removeFromCart= function(cartItemid){
+    	alert('Product successfully removed to the cart!');
+        $http.put('http://localhost:9002/Project1/rest/cart/remove/' + cartItemid).success(function(){
+        	
            $scope.refreshCart();
         });
     };
     
     $scope.clearCart= function(){
-        $http.put('http://localhost:9002/Project1/rest/cart/' + $scope.cartId).success($scope.refreshCart());
+        $http.post('http://localhost:9002/Project1/rest/cart/' + $scope.cartId).success(function(){
+        	 $scope.refreshCart();
+        });
     };
     
     $scope.calGrandTotal= function(){
