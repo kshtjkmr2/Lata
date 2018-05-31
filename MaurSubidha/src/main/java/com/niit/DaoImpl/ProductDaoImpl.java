@@ -1,7 +1,6 @@
 package com.niit.DaoImpl;
 
 import java.util.List;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,10 +15,8 @@ import com.niit.model.Product;
 		@Autowired
 	private SessionFactory sessionFactory;
 		public void saveOrUpdateProduct(Product product) {
-			Session session=sessionFactory.openSession();
-			System.out.println("PRODUCT ID BEFORE INSERTION " + product.getProductid());
+			Session session=sessionFactory.openSession();			
 			session.saveOrUpdate(product);
-			System.out.println("PRODUCT ID AFTER INSERTION " + product.getProductid());
 			session.flush();
 			session.close();
 		}

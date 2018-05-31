@@ -40,9 +40,10 @@ public class CartItemDaoImpl implements CartItemDao{
 		Session session = sessionFactory.openSession();
         Query query = session.createQuery("from CartItem where cartItemid = ?");
         query.setInteger(0, cartItemId);
+        CartItem item=(CartItem) query.uniqueResult();
         session.flush();
         //session.close();
-        return (CartItem) query.uniqueResult();
+        return item;
 	}
 
 	public void removeCartItem(CartItem cartItem) {

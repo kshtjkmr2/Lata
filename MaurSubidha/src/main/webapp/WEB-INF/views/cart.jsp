@@ -69,7 +69,7 @@
 
                 <a href="<c:url value="/all/product/productlist" />" class="btn btn-primary">Continue Shopping</a>
         
-            </div>
+           </div>
         </section>
         </div>
         </div>
